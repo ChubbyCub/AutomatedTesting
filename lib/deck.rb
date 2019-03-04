@@ -1,12 +1,20 @@
 
 # deck.rb
 
-require_relative 'card'
+require_relative 'card.rb'
 
 class Deck
 
   def initialize
-
+    bucket = []
+    values = (1..13).to_a
+    suits = [:hearts, :spades, :clubs, :diamonds]
+    for i in 0...values.length do
+      for j in 0...suits.length do
+        bucket << Card.new(values[i], suits[j])
+      end
+    end
+    return bucket
   end
 
   def draw
