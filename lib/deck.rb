@@ -4,9 +4,9 @@
 require_relative 'card.rb'
 
 class Deck
-
+  attr_reader :bucket
   def initialize
-    bucket = []
+    @bucket = []
     values = (1..13).to_a
     suits = [:hearts, :spades, :clubs, :diamonds]
     for i in 0...values.length do
@@ -14,7 +14,6 @@ class Deck
         bucket << Card.new(values[i], suits[j])
       end
     end
-    return bucket
   end
 
   def draw
