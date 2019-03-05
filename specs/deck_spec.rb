@@ -14,7 +14,7 @@ describe Deck do
     expect(deck.bucket.uniq.length == deck.bucket.length).must_equal true
   end
 
-  it "has no more than four suits for each card value" do
+  it "has exactly four suits for each card value" do
     deck = Deck.new
     hash = {}
     is_no_more_than_four = true
@@ -23,15 +23,16 @@ describe Deck do
         hash[card.value] = 1
         next
       end
-      
-      if hash[card.value] == 4
-        is_no_more_than_four = false
-        break
-      end
 
       hash[card.value] += 1
     end
 
+    hash.values.each do |value|
+      if value > 4 || value < 4
+        is_no_more_than_four = false
+      end
+    end
+    
     expect(is_no_more_than_four).must_equal true
   end
 
