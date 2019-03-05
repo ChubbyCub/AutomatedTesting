@@ -29,4 +29,8 @@ class Deck
       @bucket[random_number] = temp
     end
   end
+
+  def count
+    return @bucket.length
+  end
 end

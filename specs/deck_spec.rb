@@ -40,6 +40,16 @@ describe Deck do
     deck.draw
     expect(deck.bucket.length).must_equal 51
   end
+
+  it "returns the number of cards in a deck" do
+    deck = Deck.new
+    expect(deck.count).must_equal 52
+
+    5.times do
+      deck.draw
+    end
+    expect(deck.count).must_equal 47
+  end
   # 2.  Edge cases
   # 6. Deal returns the correct number of cards
   # 7.
