@@ -22,6 +22,7 @@ describe Deck do
       if !hash.has_key?(card.value)
         hash[card.value] = 1
         next
+      end
       
       if hash[card.value] == 4
         is_no_more_than_four = false
@@ -29,7 +30,6 @@ describe Deck do
       end
 
       hash[card.value] += 1
-      end
     end
 
     expect(is_no_more_than_four).must_equal true
