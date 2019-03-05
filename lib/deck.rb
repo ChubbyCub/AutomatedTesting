@@ -17,10 +17,16 @@ class Deck
   end
 
   def draw
-    # returns a card
+    random_number = rand(0..51)
+    return @bucket.delete_at(random_number)
   end
 
   def shuffle
-    # shuffles the deck
+    for i in 0..51 do
+      random_number = rand(i..51)
+      temp = @bucket[i]
+      @bucket[i] = @bucket[random_number]
+      @bucket[random_number] = temp
+    end
   end
 end
