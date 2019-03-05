@@ -51,7 +51,6 @@ describe Deck do
     expect(deck.count).must_equal 47
   end
   # 2.  Edge cases
-  # 6. Deal returns the correct number of cards
-  # 7.
+
 
 end

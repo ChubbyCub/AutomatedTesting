@@ -22,8 +22,8 @@ class Deck
   end
 
   def shuffle
-    for i in 0..51 do
-      random_number = rand(i..51)
+    for i in 0..@bucket.length - 1 do
+      random_number = rand(i..@bucket.length - 1)
       temp = @bucket[i]
       @bucket[i] = @bucket[random_number]
       @bucket[random_number] = temp
